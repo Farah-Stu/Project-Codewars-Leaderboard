@@ -7,8 +7,13 @@ const leaderboardBody = document.getElementById("leaderboard-body");
 const langSelect = document.getElementById("language-select");
 
 let allUserData = [];
-// Fetch on Enter Key
+// remove any error message
+userInput.addEventListener("input", () => {
+  errorMessage.textContent = "";
+  errorMessage.style.display = "none";
+});
 
+// fetch on Enter key
 userInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     fetchBtn.click();

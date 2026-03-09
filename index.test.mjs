@@ -1,3 +1,6 @@
+import {getSortedUsers} from "./leaderboardLogic.mjs"
+
+
 // This is a placeholder file which shows how you use the nock library to
 // "mock" fetch requests, replacing real requests with fake ones that you
 // control in the test. This means you can "force" the fetch request to return
