@@ -26,7 +26,8 @@ export function getSortedUsers(users, selectedLanguage){
   return sortedUsers;
     }
 
-
+// Takes a comma‑separated string of usernames
+// and returns a clean array of trimmed, non‑empty names.
     export function parseUsernames(input){
         return input
         .split(",")
