@@ -1,4 +1,4 @@
-import {getSortedUsers} from "./leaderboardLogic.mjs"
+import {getSortedUsers, parseUsernames} from "./leaderboardLogic.mjs"
 
 const userInput = document.getElementById("usernames");
 const fetchBtn = document.getElementById("fetch-btn");
@@ -7,6 +7,7 @@ const leaderboardBody = document.getElementById("leaderboard-body");
 const langSelect = document.getElementById("language-select");
 
 let allUserData = [];
+
 // remove any error message
 userInput.addEventListener("input", () => {
   errorMessage.textContent = "";
@@ -20,13 +21,13 @@ userInput.addEventListener("keydown", (event) => {
   }
 });
 
+
 // fetch Button
 fetchBtn.addEventListener("click", async function (e) {
   e.preventDefault();
-  const usernames = userInput.value
-    .split(",")
-    .map((name) => name.trim())
-    .filter((name) => name !== "");
+
+  const usernames = parseUsernames(userInput.value);
+
 
   if (usernames.length === 0) {
     errorMessage.textContent = "Please enter at least one valid username";

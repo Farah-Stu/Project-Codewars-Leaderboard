@@ -26,3 +26,11 @@ export function getSortedUsers(users, selectedLanguage){
   return sortedUsers;
     }
 
+
+    export function parseUsernames(input){
+        return input
+        .split(",")
+        .map((name) => name.trim())
+        .filter((name) => name !== "");
+    }
+
